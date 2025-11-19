@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1">&lt;title&gt;Tablas de Multiplicar - 2º Primaria&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Comic Sans MS', cursive, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: linear-gradient(135deg, #ffefba, #ffffff);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #f16161;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 2.5em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.mascota {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #f16161;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 15px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 2px 2px 5px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #f24a4a;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.level-description {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #fff3f3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 0 15px rgba(241, 97, 97, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.tabla-sel {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>select, .result {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.hidden {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.multiplicacion {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 2em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 20px 0 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.feedback {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.5em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>input[type=number] {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;img src="https://i.imgur.com/FhF0xKZ.png" alt="Mascota divertida" class="mascota" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Tablas de Multiplicar DUA&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="intro"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Selecciona un nivel y una tabla para comenzar a practicar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label for="level"&gt;Nivel:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="level" onchange="setupMultiplication()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="1"&gt;Nivel 1: Reconocimiento y apoyo visual&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="2"&gt;Nivel 2: Práctica guiada&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="3"&gt;Nivel 3: Práctica autónoma&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tabla-sel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label for="tabla"&gt;Tabla del 0 al 10:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="tabla" onchange="setupMultiplication()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="0"&gt;0&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="1"&gt;1&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="2"&gt;2&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="3"&gt;3&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="4"&gt;4&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="5"&gt;5&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="6"&gt;6&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="7"&gt;7&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="8"&gt;8&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="9"&gt;9&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="10"&gt;10&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="level1" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="level-description"&gt;Nivel 1: Observa la tabla y los resultados para reconocer las multiplicaciones.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="level1-content"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showIntro()"&gt;Volver al inicio&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="level2" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="level-description"&gt;Nivel 2: Practica las multiplicaciones con ayuda para responder.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="level2-content"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showIntro()"&gt;Volver al inicio&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="level3" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="level-description"&gt;Nivel 3: Prueba tus conocimientos sin ayudas.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="level3-content"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="showIntro()"&gt;Volver al inicio&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="feedback" id="feedback"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const levelSelect = document.getElementById('level');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const tablaSelect = document.getElementById('tabla');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showIntro() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('intro').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('level1').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('level2').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('level3').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function setupMultiplication() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const level = levelSelect.value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tabla = parseInt(tablaSelect.value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('intro').classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(level === '1'){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showLevel1(tabla);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else if(level === '2'){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showLevel2(tabla);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else if(level === '3'){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showLevel3(tabla);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showLevel1(tabla) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const container = document.getElementById('level1-content');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for(let i=0; i&lt;=10; i++){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const p = document.createElement('p');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>p.textContent = `${tabla} × ${i} = ${tabla*i}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>container.appendChild(p);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('level1').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showLevel2(tabla) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const container = document.getElementById('level2-content');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for(let i=0; i&lt;=10; i++){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const label = document.createElement('label');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>label.textContent = `${tabla} × ${i} = `;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const input = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.type = 'number';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.min = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.max = 100;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.dataset.answer = tabla*i;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.addEventListener('input', function(){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(parseInt(this.value) === tabla*i){</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.style.backgroundColor = '#b9f6ca'; // verde claro</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>this.style.backgroundColor = '#ffcdd2'; // rojo claro</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(label);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(input);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>container.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('level2').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function showLevel3(tabla) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const container = document.getElementById('level3-content');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>for(let i=0; i&lt;=10; i++){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const label = document.createElement('label');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>label.textContent = `${tabla} × ${i} = `;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const input = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.type = 'number';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.min = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.max = 100;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>input.dataset.answer = tabla*i;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(label);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.appendChild(input);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>container.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const checkButton = document.createElement('button');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>checkButton.textContent = 'Comprobar respuestas';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>checkButton.onclick = checkAnswers;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.appendChild(checkButton);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('level3').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('feedback').textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>function checkAnswers() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const inputs = document.querySelectorAll('#level3-content input');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let corrects = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>inputs.forEach(input =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const answer = parseInt(input.dataset.answer);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(parseInt(input.value) === answer){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.style.backgroundColor = '#b9f6ca';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>corrects++;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.style.backgroundColor = '#ffcdd2';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const feedback = document.getElementById('feedback');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>feedback.textContent = `Has acertado ${corrects} de ${inputs.length} preguntas.`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Mostrar inicio al cargar</p>
+<p class="p1"><span class="Apple-converted-space">  </span>showIntro();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
