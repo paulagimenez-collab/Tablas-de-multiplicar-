@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tablas de Multiplicar - 2º Primaria</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffefba, #ffffff);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    color: #f16161;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .mascota {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  button {
+    background-color: #f16161;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  }
+  button:hover {
+    background-color: #f24a4a;
+  }
+  .level-description {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  .container {
+    margin: auto;
+    max-width: 600px;
+    background: #fff3f3;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(241, 97, 97, 0.4);
+  }
+  .tabla-sel {
+    margin-top: 20px;
+  }
+  select, .result {
+    font-size: 1.2em;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  .hidden {
+    display: none;
+  }
+  .multiplicacion {
+    font-size: 2em;
+    margin: 20px 0 10px 0;
+  }
+  .feedback {
+    font-size: 1.5em;
+    margin-top: 10px;
+    height: 30px;
+  }
+  input[type=number] {
+    font-size: 1.2em;
+    padding: 5px;
+    width: 80px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://i.imgur.com/FhF0xKZ.png" alt="Mascota divertida" class="mascota" />
+  <h1>Tablas de Multiplicar DUA</h1>
+  <div id="intro">
+    <p>Selecciona un nivel y una tabla para comenzar a practicar.</p>
+    <div>
+      <label for="level">Nivel:</label>
+      <select id="level" onchange="setupMultiplication()">
+        <option value="1">Nivel 1: Reconocimiento y apoyo visual</option>
+        <option value="2">Nivel 2: Práctica guiada</option>
+        <option value="3">Nivel 3: Práctica autónoma</option>
+      </select>
+    </div>
+    <div class="tabla-sel">
+      <label for="tabla">Tabla del 0 al 10:</label>
+      <select id="tabla" onchange="setupMultiplication()">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="level1" class="hidden">
+    <p class="level-description">Nivel 1: Observa la tabla y los resultados para reconocer las multiplicaciones.</p>
+    <div id="level1-content"></div>
+    <button onclick="showIntro()">Volver al inicio</button>
+  </div>
+
+  <div id="level2" class="hidden">
+    <p class="level-description">Nivel 2: Practica las multiplicaciones con ayuda para responder.</p>
+    <div id="level2-content"></div>
+    <button onclick="showIntro()">Volver al inicio</button>
+  </div>
+
+  <div id="level3" class="hidden">
+    <p class="level-description">Nivel 3: Prueba tus conocimientos sin ayudas.</p>
+    <div id="level3-content"></div>
+    <button onclick="showIntro()">Volver al inicio</button>
+    <div class="feedback" id="feedback"></div>
+  </div>
+</div>
+
+<script>
+  const levelSelect = document.getElementById('level');
+  const tablaSelect = document.getElementById('tabla');
+
+  function showIntro() {
+    document.getElementById('intro').classList.remove('hidden');
+    document.getElementById('level1').classList.add('hidden');
+    document.getElementById('level2').classList.add('hidden');
+    document.getElementById('level3').classList.add('hidden');
+  }
+
+  function setupMultiplication() {
+    const level = levelSelect.value;
+    const tabla = parseInt(tablaSelect.value);
+
+    document.getElementById('intro').classList.add('hidden');
+
+    if(level === '1'){
+      showLevel1(tabla);
+    } else if(level === '2'){
+      showLevel2(tabla);
+    } else if(level === '3'){
+      showLevel3(tabla);
+    }
+  }
+
+  function showLevel1(tabla) {
+    const container = document.getElementById('level1-content');
+    container.innerHTML = '';
+    for(let i=0; i<=10; i++){
+      const p = document.createElement('p');
+      p.textContent = `${tabla} × ${i} = ${tabla*i}`;
+      container.appendChild(p);
+    }
+    document.getElementById('level1').classList.remove('hidden');
+  }
+
+  function showLevel2(tabla) {
+    const container = document.getElementById('level2-content');
+    container.innerHTML = '';
+    for(let i=0; i<=10; i++){
+      const div = document.createElement('div');
+      const label = document.createElement('label');
+      label.textContent = `${tabla} × ${i} = `;
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.min = 0;
+      input.max = 100;
+      input.dataset.answer = tabla*i;
+      input.addEventListener('input', function(){
+        if(parseInt(this.value) === tabla*i){
+          this.style.backgroundColor = '#b9f6ca'; // verde claro
+        } else {
+          this.style.backgroundColor = '#ffcdd2'; // rojo claro
+        }
+      });
+      div.appendChild(label);
+      div.appendChild(input);
+      container.appendChild(div);
+    }
+    document.getElementById('level2').classList.remove('hidden');
+  }
+
+  function showLevel3(tabla) {
+    const container = document.getElementById('level3-content');
+    container.innerHTML = '';
+    for(let i=0; i<=10; i++){
+      const div = document.createElement('div');
+      const label = document.createElement('label');
+      label.textContent = `${tabla} × ${i} = `;
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.min = 0;
+      input.max = 100;
+      input.dataset.answer = tabla*i;
+      div.appendChild(label);
+      div.appendChild(input);
+      container.appendChild(div);
+    }
+    const checkButton = document.createElement('button');
+    checkButton.textContent = 'Comprobar respuestas';
+    checkButton.onclick = checkAnswers;
+    container.appendChild(checkButton);
+    document.getElementById('level3').classList.remove('hidden');
+    document.getElementById('feedback').textContent = '';
+  }
+
+  function checkAnswers() {
+    const inputs = document.querySelectorAll('#level3-content input');
+    let corrects = 0;
+    inputs.forEach(input => {
+      const answer = parseInt(input.dataset.answer);
+      if(parseInt(input.value) === answer){
+        input.style.backgroundColor = '#b9f6ca';
+        corrects++;
+      } else {
+        input.style.backgroundColor = '#ffcdd2';
+      }
+    });
+    const feedback = document.getElementById('feedback');
+    feedback.textContent = `Has acertado ${corrects} de ${inputs.length} preguntas.`;
+  }
+
+  // Mostrar inicio al cargar
+  showIntro();
+</script>
+
+</body>
+</html>
